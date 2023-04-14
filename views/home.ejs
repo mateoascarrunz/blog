@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<main>
+  <h1>Home</h1>
+
+  <p><%= homeContent %></p>
+
+  <% postObjects.forEach(postObject => { %>
+  <h1><%= postObject.title %></h1>
+  <p>
+    <%= postObject.content.slice(0, 250) + " ..." %>
+    <a href="/posts/<%=postObject._id%>">Read More</a>
+  </p>
+  <% }); %>
+</main>
+<%- include("partials/footer"); -%>
